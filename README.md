@@ -1,5 +1,5 @@
 # List-based-on-avlTree
-I Implement a list based on avlTree.
+I Implement a list based on avlTree with several test case.
 
 Since the four kind of rotations won't change the sequence of the tree under In-Order Traversal, I can take the order of In-Order Traversal as the order of my list.
 
