@@ -4,13 +4,13 @@
 package avl;
 
 public class Node {
-    int numberOfNodesOnLeft ;
+    int numberOfNodesOnLeft;
     int height;
     Node left;
     Node right;
     Object obj;
 
-    public Object getObj(){
+    public Object getObj() {
         return this.obj;
     }
 

@@ -1,8 +1,9 @@
 package myList; /**
  * Created by chang on 2/24/17.
  */
+
 import avl.Node;
-import avl.avlTree;
+import avl.AvlTree;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -10,16 +11,16 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-public class myList implements List{
+public class myList implements List {
 
-    private avlTree tree = new avlTree();
+    private AvlTree tree = new AvlTree();
 
     public int size() {
         return tree.getSize();
     }
 
     public boolean isEmpty() {
-        if (tree.getSize() ==0 ){
+        if (tree.getSize() == 0) {
             return true;
         }
         return false;
@@ -115,7 +116,7 @@ public class myList implements List{
     }
 
     // not required but useful for primitive tests
-    public void print(){
+    public void print() {
         tree.inOrder();
     }
 }

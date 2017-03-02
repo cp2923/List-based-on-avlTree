@@ -18,8 +18,8 @@ public class myListTest {
     @Test
     public void add() throws Exception {
         myList list = new myList();
-        for (int i = 0; i < 10000; i ++) {
-            list.add(0,i);
+        for (int i = 0; i < 10000; i++) {
+            list.add(0, i);
         }
         Object result = list.get(0);
         Assert.assertEquals(9999, result);
@@ -29,8 +29,8 @@ public class myListTest {
     @Test
     public void set() throws Exception {
         myList list = new myList();
-        for (int i = 0; i < 10000; i ++) {
-            list.add(0,i);
+        for (int i = 0; i < 10000; i++) {
+            list.add(0, i);
         }
         Assert.assertEquals(9899, list.get(100));
         list.set(10, null);
@@ -38,31 +38,30 @@ public class myListTest {
 
     }
 
-    @Test
     // after 10000 insert at the end of the list . the 10-th object should still be 10.
+    @Test
     public void add1() throws Exception {
         myList list = new myList();
-        for (int i = 0; i < 100; i ++) {
+        for (int i = 0; i < 100; i++) {
             list.add(i);
         }
         Assert.assertEquals(10, list.get(10));
-        for (int i = 0; i < 10000; i ++) {
+        for (int i = 0; i < 10000; i++) {
             list.add(i);
         }
         Assert.assertEquals(10, list.get(10));
     }
 
-
     // after 10000 insert at the end of the list. I removed some objects
     @Test
     public void remove() throws Exception {
         myList list = new myList();
-        for (int i = 0; i < 10000; i ++) {
+        for (int i = 0; i < 10000; i++) {
             list.add(i);
         }
-        Object deleted =  list.remove(8);
+        Object deleted = list.remove(8);
         Assert.assertEquals(8, deleted);
-        deleted =  list.remove(10);
+        deleted = list.remove(10);
         Assert.assertEquals(11, deleted);
         Assert.assertEquals(52, list.get(50));
     }
@@ -70,14 +69,14 @@ public class myListTest {
     @Test(expected = IndexOutOfBoundsException.class)
     public void addIndexOutOfBoundsException() {
         myList list = new myList();
-        list.add(0,0);
-        list.add(2,0);
+        list.add(0, 0);
+        list.add(2, 0);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void removeIndexOutOfBoundsException() {
         myList list = new myList();
-        list.add(0,0);
+        list.add(0, 0);
         list.remove(2);
     }
 
@@ -85,10 +84,10 @@ public class myListTest {
     @Test
     public void removeSeveralTimes() {
         myList list = new myList();
-        for (int i = 0; i < 1000; i ++) {
-            list.add(0,i);
+        for (int i = 0; i < 1000; i++) {
+            list.add(0, i);
         }
-        for (int i = 0; i < 10; i ++) {
+        for (int i = 0; i < 10; i++) {
             Object deleted = list.remove(50);
             Assert.assertEquals(948 - i, list.get(50));
         }
